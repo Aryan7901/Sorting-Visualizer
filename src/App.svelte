@@ -158,7 +158,7 @@ $: duration =2000/Math.pow(speed,2)
 	
 	<div class="container">
 		{#each array as bar ,index (index)}
-		<div animate:flip="{{duration:duration}}" class="outer-container" style="width: {80/length}%;height: {bar}%;background:{index===_i||index===_j?"white":""} "/>
+		<div animate:flip="{{duration:duration}}" class="outer-container {index===_i||index===_j?"highlight":""}" style="width: {80/length}%;height: {bar}%; "/>
 		{/each}
 	</div>
 	<button on:click={resetHandler} class="btn">Reset</button>
@@ -188,11 +188,7 @@ $: duration =2000/Math.pow(speed,2)
 		margin: 0;
 		
 	}
-	@media(prefers-color-scheme:dark){
-		:global(body){
-			background-color: black;
-		}
-	}
+
 	.container{
   display: flex;
   flex-direction: row;
@@ -233,6 +229,18 @@ $: duration =2000/Math.pow(speed,2)
 	color: #ff3e00;
 	cursor: pointer;
 }
+.highlight{
+	background: greenyellow;
+}
+@media(prefers-color-scheme:dark){
+		:global(body){
+			background-color: black;
+		}
+		.highlight{
+			background: white;
+		}
+		
+	}
 /*********** Baseline, reset styles ***********/
 input[type="range"] {
   -webkit-appearance: none;
