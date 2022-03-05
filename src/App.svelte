@@ -137,20 +137,20 @@ function sort(sorter){
 	const {done} =gen.next()
 	if(done){
 		clearInterval(timer)
-		duration=1000/Math.pow(speed,1.25)
+		duration=2000/Math.pow(speed,1.5)
 		_i=_j=undefined
 		disabled=false
 	}
 }, 1000/speed);}
 $:array=genArray(length)
 function resetHandler(){
-	duration=1000/Math.pow(speed,1.25)
+	duration=2000/Math.pow(speed,1.5)
 	disabled=false
 	array=genArray(length)
 	clearInterval(timer)
 	_i=_j=undefined
 }
-$: duration =1000/Math.pow(speed,1.25)
+$: duration =2000/Math.pow(speed,1.5)
 </script>
 
 <main>
