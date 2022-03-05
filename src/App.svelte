@@ -170,7 +170,7 @@ $: duration =800/speed
 
 	<button on:click={()=>{clearInterval(timer);disabled=false}} class="btn">Pause</button>
 	<label for="size">Size</label>
-	<input id="size" name="size" type="range" min="5" max="300" value={length} on:mouseleave={(event)=>length=event.target.value}/>
+	<input id="size" name="size" type="range" min="5" max="300" value={length}  on:pointerleave={(event)=>length=event.target.value}/>
 	<label for="speed">Speed</label>
 	<input id="speed" name="speed" type="range" min="1" max="50" disabled={disabled} bind:value={speed}/>
 </main>
